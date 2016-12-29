@@ -4,8 +4,8 @@ import Html.Attributes exposing (style)
 import Html exposing (Attribute)
 
 
-mainStyle : Html.Attribute a
-mainStyle =
+body : Html.Attribute a
+body =
     style
         [ ( "padding", "15px" )
         , ( "width", "100%" )
@@ -16,8 +16,8 @@ mainStyle =
         ]
 
 
-listStyle : Html.Attribute a
-listStyle =
+list : Html.Attribute a
+list =
     style
         [ ( "list-style-type", "none" )
         , ( "padding", "10px 5px" )
@@ -26,10 +26,30 @@ listStyle =
         ]
 
 
-buttonStyle : Html.Attribute a
-buttonStyle =
+button : Html.Attribute a
+button =
     style
         [ ( "border", "1px solid silver" )
         , ( "border-radius", "5px" )
         , ( "padding", "2px 5px" )
         ]
+
+
+column : Html.Attribute a
+column =
+    style
+        [ ( "display", "inline-block" )
+        , ( "width", "50%" )
+        ]
+
+
+content : Html.Attribute a
+content =
+    style
+        []
+
+
+header : Html.Attribute a
+header =
+    style
+        []

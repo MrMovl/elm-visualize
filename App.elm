@@ -1,9 +1,9 @@
 module App exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import CSS
+import Model exposing (sample1, ProgramRepresentation)
 
 
 main : Program Never Model Msg
@@ -21,12 +21,12 @@ main =
 
 
 type alias Model =
-    { program : String }
+    { program : ProgramRepresentation }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( Model "", Cmd.none )
+    ( Model sample1, Cmd.none )
 
 
 
@@ -63,10 +63,16 @@ subscriptions model =
 
 view : Model -> Html Msg
 view model =
-    div [ CSS.mainStyle ]
-        [ h1 [] [ text "Elmoin Starter Kit" ]
-        , footer []
-            [ h2 [] [ model.program |> text ]
-            , textarea [ onInput ChangeInput ] []
+    div [ CSS.body ]
+        [ h1 [ CSS.header ] [ text "elm visualize" ]
+        , div [ CSS.content ]
+            [ div []
+                [ h2 [ CSS.column ] [ text "Output" ]
+                , h2 [ CSS.column ] [ text "Input" ]
+                ]
+            , div []
+                [ div [ CSS.column ] [ model.program |> text ]
+                , div [ CSS.column ] [ textarea [ onInput ChangeInput ] [] ]
+                ]
             ]
         ]
