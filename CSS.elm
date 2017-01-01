@@ -53,3 +53,11 @@ header : Html.Attribute a
 header =
     style
         []
+
+
+graphStyle : Html.Attribute a
+graphStyle =
+    style
+        [ ( "margin", "40px" )
+        , ( "font-family", "Helvetica, Arial, san-serif" )
+        ]
